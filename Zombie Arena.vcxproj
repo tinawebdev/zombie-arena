@@ -20,8 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ZombieArena.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CreateBackground.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ZombieArena.cpp" />
   </ItemGroup>
