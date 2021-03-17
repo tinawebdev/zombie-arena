@@ -51,7 +51,6 @@ int createBackground(VertexArray& rVA, IntRect arena)
 								rVA[currentVertex + 1].texCoords = Vector2f(TILE_SIZE, 0 + verticalOffset);
 								rVA[currentVertex + 2].texCoords = Vector2f(TILE_SIZE, TILE_SIZE + verticalOffset);
 								rVA[currentVertex + 3].texCoords = Vector2f(0, TILE_SIZE + verticalOffset);
-
 						}
 
 						// Position ready for the next for vertices
