@@ -28,6 +28,7 @@
     <ClCompile Include="CreateBackground.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="TextureHolder.cpp" />
+    <ClCompile Include="Zombie.cpp" />
     <ClCompile Include="ZombieArena.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
