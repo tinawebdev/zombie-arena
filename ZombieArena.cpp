@@ -2,6 +2,7 @@
 #include "ZombieArena.h"
 #include "Player.h"
 #include "TextureHolder.h"
+#include "Bullet.h"
 
 using namespace sf;
 
@@ -55,6 +56,17 @@ int main()
     int numZombies;
     int numZombiesAlive;
     Zombie* zombies = nullptr;
+
+    // 100 bullets should do
+    Bullet bullets[100];
+    int currentBullet = 0;
+    int bulletsSpare = 24;
+    int bulletsInClip = 6;
+    int clipSize = 6;
+    float fireRate = 1;
+
+    // When was the fire button last pressed?
+    Time lastPressed;
 
     // The main game loop
     while (window.isOpen())
