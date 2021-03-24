@@ -108,7 +108,26 @@ int main()
 
                 if (state == State::PLAYING)
                 {
-
+                    // Reloading
+                    if (event.key.code == Keyboard::R)
+                    {
+                        if (bulletsSpare >= clipSize)
+                        {
+                            // Plenty of bullets. Reload.
+                            bulletsInClip = clipSize;
+                            bulletsSpare -= clipSize;
+                        }
+                        else if (bulletsSpare > 0)
+                        {
+                            // Only few bullets left
+                            bulletsInClip = bulletsSpare;
+                            bulletsSpare = 0;
+                        }
+                        else
+                        {
+                            // More here soon?
+                        }
+                    }
                 } // End event polling
 
                 // Handle the player quitting
