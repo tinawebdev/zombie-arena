@@ -189,7 +189,7 @@ int main()
             // Fire a bullet
             if (Mouse::isButtonPressed(sf::Mouse::Left))
             {
-                if (gameTimeTotal.asMicroseconds() - lastPressed.asMicroseconds()
+                if (gameTimeTotal.asMilliseconds() - lastPressed.asMilliseconds()
                     // 1000 because this is the number of milliseconds in a second
                     > 1000 / fireRate && bulletsInClip > 0) 
                 {
