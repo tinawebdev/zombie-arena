@@ -382,6 +382,24 @@ int main()
                     }
                 }
             } // End zombie being shot
+
+            // Have any zombies touched the player
+            for (int i = 0; i < numZombies; i++)
+            {
+                if (player.getPosition().intersects
+                (zombies[i].getPosition()) && zombies[i].isAlive())
+                {
+                    if (player.hit(gameTimeTotal))
+                    {
+                        // More here later
+                    }
+
+                    if (player.getHealth() <= 0)
+                    {
+                        state = State::GAME_OVER;
+                    }
+                }
+            } // End player get touched
         } // End updating the scene
 
         /*
