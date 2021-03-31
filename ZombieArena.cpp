@@ -184,6 +184,12 @@ int main()
     healthBar.setFillColor(Color::Red);
     healthBar.setPosition(450, 980);
 
+    // When did we last update the HUD?
+    int framesSinceLastHUDUpdate = 0;
+
+    // How often (in frames) should we update the HUD
+    int fpsMeasurementFrameInterval = 1000;
+
     // The main game loop
     while (window.isOpen())
     {
@@ -514,6 +520,45 @@ int main()
             {
                 bulletsSpare += ammoPickup.gotIt();
             }
+
+            // size up the health bar
+            healthBar.setSize(Vector2f(player.getHealth() * 3, 50));
+
+            // Increment the number of frames since the previous update
+            framesSinceLastHUDUpdate++;
+
+            // re-calculate every fpsMeasurementFrameInterval frames
+            if (framesSinceLastHUDUpdate > fpsMeasurementFrameInterval)
+            {
+                // Update game HUD text
+                std::stringstream ssAmmo;
+                std::stringstream ssScore;
+                std::stringstream ssHiScore;
+                std::stringstream ssWave;
+                std::stringstream ssZombiesAlive;
+
+                // Update the ammo text
+                ssAmmo << bulletsInClip << "/" << bulletsSpare;
+                ammoText.setString(ssAmmo.str());
+
+                // Update the score text
+                ssScore << "Score:" << score;
+                scoreText.setString(ssScore.str());
+
+                // Update the high score text
+                ssHiScore << "Hi Score:" << hiScore;
+                hiScoreText.setString(ssHiScore.str());
+
+                // Update the wave
+                ssWave << "Wave:" << wave;
+                waveNumberText.setString(ssWave.str());
+
+                // Update zombies remaining
+                ssZombiesAlive << "Zombies:" << numZombiesAlive;
+                zombiesRemainingText.setString(ssZombiesAlive.str());
+
+                framesSinceLastHUDUpdate = 0;
+            } // End HUD update
         } // End updating the scene
 
         /*
