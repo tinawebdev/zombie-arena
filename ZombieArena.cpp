@@ -1,6 +1,7 @@
 #include <sstream>
 #include <fstream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "ZombieArena.h"
 #include "Player.h"
 #include "TextureHolder.h"
@@ -199,6 +200,48 @@ int main()
 
     // How often (in frames) should we update the HUD
     int fpsMeasurementFrameInterval = 1000;
+
+    // Prepare the hit sound
+    SoundBuffer hitBuffer;
+    hitBuffer.loadFromFile("sound/hit.wav");
+    Sound hit;
+    hit.setBuffer(hitBuffer);
+
+    // Prepare the splat sound
+    SoundBuffer splatBuffer;
+    splatBuffer.loadFromFile("sound/splat.wav");
+    Sound splat;
+    splat.setBuffer(splatBuffer);
+
+    // Prepare the shoot sound
+    SoundBuffer shootBuffer;
+    shootBuffer.loadFromFile("sound/shoot.wav");
+    Sound shoot;
+    shoot.setBuffer(shootBuffer);
+
+    // Prepare the reload sound
+    SoundBuffer reloadBuffer;
+    reloadBuffer.loadFromFile("sound/reload.wav");
+    Sound reload;
+    reload.setBuffer(reloadBuffer);
+
+    // Prepare the failed sound
+    SoundBuffer reloadFailedBuffer;
+    reloadFailedBuffer.loadFromFile("sound/reload_failed.wav");
+    Sound reloadFailed;
+    reloadFailed.setBuffer(reloadFailedBuffer);
+
+    // Prepare the powerup sound
+    SoundBuffer powerupBuffer;
+    powerupBuffer.loadFromFile("sound/powerup.wav");
+    Sound powerup;
+    powerup.setBuffer(powerupBuffer);
+
+    // Prepare the pickup sound
+    SoundBuffer pickupBuffer;
+    pickupBuffer.loadFromFile("sound/pickup.wav");
+    Sound pickup;
+    pickup.setBuffer(pickupBuffer);
 
     // The main game loop
     while (window.isOpen())
