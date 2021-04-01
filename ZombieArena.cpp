@@ -1,4 +1,5 @@
 #include <sstream>
+#include <fstream>
 #include <SFML/Graphics.hpp>
 #include "ZombieArena.h"
 #include "Player.h"
@@ -151,6 +152,15 @@ int main()
     scoreText.setCharacterSize(55);
     scoreText.setFillColor(Color::White);
     scoreText.setPosition(20, 0);
+
+    // Load the high score from a text file
+    std::ifstream inputFile("gamedata/scores.txt");
+    if (inputFile.is_open())
+    {
+        // >> Reads the data
+        inputFile >> hiScore;
+        inputFile.close();
+    }
 
     // Hi Score
     Text hiScoreText;
@@ -503,6 +513,11 @@ int main()
                     if (player.getHealth() <= 0)
                     {
                         state = State::GAME_OVER;
+
+                        std::ofstream outputFile("gamedata/scores.txt");
+                        // << writes the data
+                        outputFile << hiScore;
+                        outputFile.close();
                     }
                 }
             } // End player get touched
