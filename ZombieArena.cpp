@@ -303,16 +303,19 @@ int main()
                             // Plenty of bullets. Reload.
                             bulletsInClip = clipSize;
                             bulletsSpare -= clipSize;
+                            reload.play();
                         }
                         else if (bulletsSpare > 0)
                         {
                             // Only few bullets left
                             bulletsInClip = bulletsSpare;
                             bulletsSpare = 0;
+                            reload.play();
                         }
                         else
                         {
                             // More here soon?
+                            reloadFailed.play();
                         }
                     }
                 } // End event polling
