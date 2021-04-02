@@ -605,6 +605,9 @@ int main()
             (healthPickup.getPosition()) && healthPickup.isSpawned())
             {
                 player.increaseHealthLevel(healthPickup.gotIt());
+
+                // Play a sound
+                pickup.play();
             }
 
             // Has the player touched ammo pickup
@@ -612,6 +615,9 @@ int main()
             (ammoPickup.getPosition()) && ammoPickup.isSpawned())
             {
                 bulletsSpare += ammoPickup.gotIt();
+
+                // Play a sound
+                reload.play();
             }
 
             // size up the health bar
