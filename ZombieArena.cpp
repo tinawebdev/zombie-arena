@@ -572,6 +572,9 @@ int main()
                                     state = State::LEVELING_UP;
                                 }
                             }
+
+                            // Make a splat sound
+                            splat.play();
                         }
                     }
                 }
