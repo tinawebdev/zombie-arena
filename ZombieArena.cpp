@@ -585,7 +585,7 @@ int main()
                 {
                     if (player.hit(gameTimeTotal))
                     {
-                        // More here later
+                        hit.play();
                     }
 
                     if (player.getHealth() <= 0)
