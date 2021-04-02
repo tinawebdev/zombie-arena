@@ -391,6 +391,8 @@ int main()
                     }
                     lastPressed = gameTimeTotal;
 
+                    shoot.play();
+
                     bulletsInClip--;
                 }
             } // End fire a bullet
