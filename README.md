@@ -40,12 +40,12 @@ sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-
 ## Screenshots
 
 <div style="display: flex; align-items: flex-start;">
-  <img src="https://github.com/kgoncharova/zombie-arena/blob/master/screenshots/Screenshot1.png" height="200">
-  <img src="https://github.com/kgoncharova/zombie-arena/blob/master/screenshots/Screenshot2.png" height="200">
-  <img src="https://github.com/kgoncharova/zombie-arena/blob/master/screenshots/Screenshot3.png" height="200">
-  <img src="https://github.com/kgoncharova/zombie-arena/blob/master/screenshots/Screenshot4.png" height="200">
-  <img src="https://github.com/kgoncharova/zombie-arena/blob/master/screenshots/Screenshot5.png" height="200">
-  <img src="https://github.com/kgoncharova/zombie-arena/blob/master/screenshots/Screenshot6.png" height="200">
+  <img src="./screenshots/Screenshot1.png" height="200">
+  <img src="./screenshots/Screenshot2.png" height="200">
+  <img src="./screenshots/Screenshot3.png" height="200">
+  <img src="./screenshots/Screenshot4.png" height="200">
+  <img src="./screenshots/Screenshot5.png" height="200">
+  <img src="./screenshots/Screenshot6.png" height="200">
 </div>
 
 ## Demo for Windows
